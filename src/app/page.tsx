@@ -5,6 +5,7 @@ import { Section, Cell, Image, List } from '@telegram-apps/telegram-ui';
 import { Link } from '@/components/Link/Link';
 
 import tonSvg from './_assets/ton.svg';
+import solSvg from './_assets/solana.svg';
 
 export default function Home() {
   return (
@@ -13,12 +14,20 @@ export default function Home() {
         header='Features'
         footer='You can use these pages to learn more about features, provided by Telegram Mini Apps and other useful projects'
       >
-        <Link href='/ton-connect'>
+        {/* <Link href='/ton-connect'>
           <Cell
             before={<Image src={tonSvg.src} style={{ backgroundColor: '#007AFF' }}/>}
             subtitle='Connect your TON wallet'
           >
             TON Connect
+          </Cell>
+        </Link> */}
+        <Link href='/solana'>
+          <Cell
+            before={<Image src={solSvg.src} alt="Solana SVG" />}
+            subtitle='Connect your Solana'
+          >
+            Solana
           </Cell>
         </Link>
       </Section>

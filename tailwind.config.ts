@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+// const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
+// const { join } = require('path');
 
 const config: Config = {
   content: [
@@ -6,6 +8,13 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  // content: [
+  //   join(
+  //     __dirname,
+  //     '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'
+  //   ),
+  //   ...createGlobPatternsForDependencies(__dirname),
+  // ],
   theme: {
     extend: {
       backgroundImage: {
@@ -15,6 +24,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 };
 export default config;

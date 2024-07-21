@@ -6,6 +6,7 @@ import { Root } from '@/components/Root/Root';
 import '@telegram-apps/telegram-ui/dist/styles.css';
 import 'normalize.css/normalize.css';
 import './_assets/globals.css';
+import { ReactQueryProvider } from './react-query-provider';
 
 export const metadata: Metadata = {
   title: 'Your Application Title Goes Here',
@@ -15,11 +16,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
-    <body>
-      <Root>
-        {children}
-      </Root>
-    </body>
+      <body>
+        <ReactQueryProvider>
+          <Root>
+            {children}
+          </Root>
+        </ReactQueryProvider>
+      </body>
     </html>
   );
 }
